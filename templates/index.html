@@ -1,0 +1,79 @@
+<html>
+   <head>
+   
+      <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap" rel="stylesheet"> 
+      
+      <style>
+
+         body {
+         background-color: #cccccc;
+         background-repeat: no-repeat;
+         background-attachment: fixed;
+         background-position: center;
+         background-size: auto; 
+         }
+
+         h1 {
+            font-family: 'Cinzel Decorative', cursive;
+            color:whitesmoke;
+            text-shadow: 2px 2px #ff0000;
+         }
+
+         .center {
+            text-align: center;
+            padding: 70px 0;
+            }
+
+         .buttons {
+            text-align:justify;
+            font-family: 'Cinzel Decorative', cursive;
+            color:whitesmoke;
+            font-size: large;         
+            }
+         .buttons:after {
+            content:'';
+            display:inline-block;
+            width:99.5%;/* generates an extra transparent line */
+         }
+            /* makeup*/
+         .buttons {
+            padding: 16px 32px;
+            box-shadow:0 0 5px;
+            margin: 4px 2px;
+            border-radius:0.25em;
+            background-color: #000000;
+            border: none;
+            color: white;
+          }
+
+      </style>
+      
+   </head>
+
+    <body>
+
+         <div style="text-align:center; padding: 70px 0;">
+
+            <h1>Cast the Runes to determine your fate...</h1>
+            
+            <form method="post" action="/">
+               <input class=buttons type="submit" name="submit_button" value="d4">
+               <input class=buttons type="submit" name="submit_button" value="d6">
+               <input class=buttons type="submit" name="submit_button" value="d8">
+               <input class=buttons type="submit" name="submit_button" value="d10">
+               <input class=buttons type="submit" name="submit_button" value="d12">
+               <input class=buttons type="submit" name="submit_button" value="d20">
+            </form>
+
+            <div class=center>
+               {% if value %}
+                  <p><h1>{{ type }} Result</h1></p>
+                  <p><h1 style=font-size:100px;> {{ value }}</h1>
+               {% endif %}
+            </div>
+
+         </div>
+
+    </body>
+
+</html>
